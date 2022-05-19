@@ -15,7 +15,7 @@ system_create_user() {
   sleep 2
 
   sudo su - root <<EOF
-  useradd -m -p $(openssl passwd -crypt $deploy_password) -s /bin/bash -G sudo vespertinewebot
+  useradd -m -p $(openssl passwd -decrypt $deploy_password) -s /bin/bash -G sudo vespertinewebot
   usermod -aG sudo vespertinewebot
 EOF
 
